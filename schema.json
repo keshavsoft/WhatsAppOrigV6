@@ -1,0 +1,12 @@
+{
+    "Tables": [
+        "mobiles",
+        "StudentNames",
+        "messages",
+        "BillsTable",
+        "BillItemsTable",
+        "waAck",
+        "waAckRead",
+        "waAckSent"
+    ]
+}

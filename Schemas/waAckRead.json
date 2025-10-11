@@ -1,0 +1,20 @@
+{
+    "tableName": "waAckRead",
+    "columns": [
+        {
+            "field": "WAAckId",
+            "title": "WAAckId",
+            "isInput": true
+        },
+        {
+            "field": "DeliveredDT",
+            "title": "DeliveredDT",
+            "isInput": true
+        }
+    ],
+    "data": [],
+    "Vertical": [],
+    "SubRoutes": [
+        "Read"
+    ]
+}

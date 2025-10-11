@@ -1,0 +1,7 @@
+POST http://localhost:9010/V11/messages/Insert/AsIs
+Content-Type: application/json
+
+{
+  "Key": "",
+  "Value": ""
+}

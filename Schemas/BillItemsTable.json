@@ -1,0 +1,64 @@
+{
+    "tableName": "BillItemsTable",
+    "columns": [
+        {
+            "field": "ItemName",
+            "title": "ItemName",
+            "type": "text",
+            "isInput": true,
+            "isAutoFocus": true,
+            "WidthOptions": {
+                "inPx": 200
+            }
+        },
+        {
+            "field": "Rate",
+            "title": "Rate",
+            "unique": false,
+            "type": "number",
+            "isNumber": true
+        },
+        {
+            "field": "Qty",
+            "title": "Qty",
+            "unique": false,
+            "type": "number",
+            "isNumber": true
+        },
+        {
+            "field": "Amount",
+            "title": "Amount",
+            "unique": false,
+            "type": "number",
+            "isNumber": true
+        },
+        {
+            "field": "FK",
+            "title": "FK",
+            "type": "number",
+            "isInput": true
+        }
+    ],
+    "data": [],
+    "Vertical": [],
+    "DataTableOptions": {
+        "Header": {
+            "autoFocus": "ItemName"
+        }
+    },
+    "DefaultObjectToInsert": {
+        "Simple": {
+            "ItemName": "",
+            "Rate": 0,
+            "Qty": 0,
+            "Amount": 0,
+            "FK": 0
+        }
+    },
+    "SubRoutes": [
+        "Read",
+        "Insert",
+        "Filter",
+        "Delete"
+    ]
+}

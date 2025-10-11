@@ -1,0 +1,1 @@
+GET http://localhost:9010/V12/BillsTable/Filter/ByKeyAndValue/InvoiceDate/2025-10-08

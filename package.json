@@ -1,0 +1,25 @@
+{
+    "name": "WhatsAppOrigV5",
+    "version": "1.1.22",
+    "description": "",
+    "main": "app.js",
+    "type": "module",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "node --env-file=.env app.js"
+    },
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "body-parser": "^2.2.0",
+        "cookie-parser": "^1.4.7",
+        "dotenv": "17.2.0",
+        "express": "^5.1.0",
+        "jsonwebtoken": "^9.0.2",
+        "lowdb": "^7.0.1",
+        "multer": "^2.0.2",
+        "pug": "^3.0.3",
+        "whatsapp-web.js": "^1.34.1",
+        "ws": "^8.18.3"
+    }
+}

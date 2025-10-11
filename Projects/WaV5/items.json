@@ -1,0 +1,112 @@
+[
+    {
+        "ItemName": "battery z5lb amaron",
+        "Rate": 1000,
+        "Qty": 2,
+        "DiscPer": null,
+        "Amount": 2000,
+        "FK": "37",
+        "pk": 370,
+        "ServerInsertedTimeStamp": "2025-10-02T08:19:47.753Z"
+    },
+    {
+        "ItemName": "coil base assembly xl 70cc nippon",
+        "Rate": 786,
+        "Qty": 2,
+        "DiscPer": 23,
+        "Amount": 1210,
+        "FK": "37",
+        "pk": 371,
+        "ServerInsertedTimeStamp": "2025-10-02T08:20:46.107Z"
+    },
+    {
+        "ItemName": "acc cable xl 70cc camp",
+        "Rate": 149,
+        "Qty": 3,
+        "DiscPer": 40,
+        "Amount": 268,
+        "FK": "37",
+        "pk": 372,
+        "ServerInsertedTimeStamp": "2025-10-02T08:22:43.665Z"
+    },
+    {
+        "ItemName": "jocker washer ",
+        "Rate": 5,
+        "Qty": 40,
+        "DiscPer": null,
+        "Amount": 200,
+        "FK": "37",
+        "pk": 373,
+        "ServerInsertedTimeStamp": "2025-10-02T08:23:31.074Z"
+    },
+    {
+        "ItemName": "vavle cap hero oe",
+        "Rate": 29,
+        "Qty": 5,
+        "DiscPer": 16,
+        "Amount": 122,
+        "FK": "37",
+        "pk": 374,
+        "ServerInsertedTimeStamp": "2025-10-02T08:23:59.623Z"
+    },
+    {
+        "ItemName": "clutch plates passion fcc",
+        "Rate": 165,
+        "Qty": 6,
+        "DiscPer": null,
+        "Amount": 990,
+        "FK": "37",
+        "pk": 375,
+        "ServerInsertedTimeStamp": "2025-10-02T08:24:35.349Z"
+    },
+    {
+        "ItemName": "tool box lock activa oe",
+        "Rate": 150,
+        "Qty": 2,
+        "DiscPer": 12,
+        "Amount": 264,
+        "FK": "37",
+        "pk": 376,
+        "ServerInsertedTimeStamp": "2025-10-02T08:25:04.273Z"
+    },
+    {
+        "ItemName": "oil stick xl70cc ",
+        "Rate": 15,
+        "Qty": 5,
+        "DiscPer": null,
+        "Amount": 75,
+        "FK": "37",
+        "pk": 377,
+        "ServerInsertedTimeStamp": "2025-10-02T08:25:28.296Z"
+    },
+    {
+        "ItemName": "acc cable mastroe hero oe",
+        "Rate": 290,
+        "Qty": 2,
+        "DiscPer": 16,
+        "Amount": 487,
+        "FK": "37",
+        "pk": 378,
+        "ServerInsertedTimeStamp": "2025-10-02T08:25:48.079Z"
+    },
+    {
+        "ItemName": "front sprocket daimond xl70cc",
+        "Rate": 90,
+        "Qty": 3,
+        "DiscPer": 28,
+        "Amount": 194,
+        "FK": "37",
+        "pk": 379,
+        "ServerInsertedTimeStamp": "2025-10-02T08:26:29.126Z"
+    },
+    {
+        "ItemName": "front sprocket xl70cc camp",
+        "Rate": 60,
+        "Qty": 1,
+        "DiscPer": 40,
+        "Amount": 36,
+        "FK": "37",
+        "pk": 380,
+        "ServerInsertedTimeStamp": "2025-10-02T08:26:59.919Z"
+    }
+]

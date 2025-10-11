@@ -1,0 +1,9 @@
+{
+    "tableName": "mobiles",
+    "columns": [],
+    "data": {},
+    "Vertical": [],
+    "SubRoutes": [
+        "Read"
+    ]
+}

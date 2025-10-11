@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compact Tax Invoice</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 15px;
+            background: #fff;
+            font-size: 11px;
+        }
+
+        .invoice-container {
+            width: 700px;
+            margin: auto;
+            padding: 15px;
+            border: 1px solid #000;
+        }
+
+        .header-strip {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 5px;
+            font-size: 10px;
+        }
+
+        .center-column {
+            text-align: center;
+            font-weight: bold;
+            font-size: 12px;
+        }
+
+        .invoice-header {
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .company-name {
+            font-size: 16px;
+            font-weight: bold;
+            margin: 3px 0;
+        }
+
+        .address {
+            font-size: 10px;
+            margin: 0;
+            border: none !important;
+        }
+
+        .recipient-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 10px;
+            margin-bottom: 10px;
+        }
+
+        .recipient-table td {
+            border: 1px solid #000;
+            padding: 3px 5px;
+        }
+
+        .products-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 10px;
+        }
+
+        .products-table th,
+        .products-table td {
+            border: 1px solid #000;
+            padding: 3px 5px;
+            text-align: center;
+        }
+
+        .products-table th {
+            background: #f9f9f9;
+            font-size: 10px;
+        }
+
+        .total-row td {
+            font-weight: bold;
+        }
+
+        .tax-details-row {
+            display: flex;
+            font-size: 10px;
+            border: 1px solid #000;
+            border-top: none;
+            margin-top: 10px;
+        }
+
+        .tax-box {
+            flex: 1;
+            border-top: 1px solid #000;
+            border-right: 1px solid #000;
+            padding: 5px;
+            text-align: center;
+        }
+
+        .tax-box:last-child {
+            border-right: none;
+        }
+
+        .footer-strip {
+            display: flex;
+            border: 1px solid #000;
+            border-top: none;
+            margin-top: 5px;
+            font-size: 10px;
+        }
+
+        .bank-disclaimer-column {
+            flex: 2;
+            border-top: 1px solid #000;
+            border-right: 1px solid #000;
+            padding: 5px;
+        }
+
+        .signature-column {
+            flex: 1;
+            text-align: center;
+            padding: 5px;
+        }
+
+        .authorised-text {
+            border-top: 1px solid #000;
+            margin-top: 25px;
+            font-size: 10px;
+        }
+
+        .controls {
+            width: 700px;
+            margin: auto;
+            margin-bottom: 10px;
+            text-align: right;
+        }
+
+        .controls button {
+            padding: 5px 10px;
+            font-size: 10px;
+            margin-left: 5px;
+            cursor: pointer;
+        }
+
+        @media print {
+            .controls {
+                display: none;
+            }
+
+            .products-table th {
+                background: none !important;
+                color: #000 !important;
+            }
+
+            .products-table td:last-child {
+                display: none;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="controls">
+        <button onclick="window.print()">🖨️ Print</button>
+    </div>
+
+    <div class="invoice-container">
+        <div class="header-strip">
+            <div>
+                <b>
+                    <div>GSTIN: 37CZAPS0763H1Z7</div>
+                </b>
+                <b>
+                    <div>PAN: CZAPS0763H</div>
+                </b>
+            </div>
+            <div class="center-column">
+                <div>TAX INVOICE</div>
+                <div>CASH / CREDIT</div>
+            </div>
+            <div>
+                <b>
+                    <div>Cell: 93481 59999</div>
+                    <div>90529 19777</div>
+                </b>
+            </div>
+        </div>
+
+        <div class="invoice-header">
+            <div class="company-name">SRI RAMAKRISHNA AUTO SPARES</div>
+            <p class="address">D.No. 32-1-35, Cinema Road, Revenue Ward No. 18,<br>
+                Vallabhai Street, KAKINADA - 533 001.</p>
+        </div>
+
+        <table class="recipient-table">
+            <tr>
+                <td><b>Name: </b>PRINC - Antony M</td>
+                <td><b>Invoice No: </b>2298</td>
+            </tr>
+            <tr>
+                <td><b>Address: </b>Kakinada</td>
+                <td><b>Date: </b>29/09/2022</td>
+            </tr>
+            <tr>
+                <td><b>GSTIN:</b></td>
+                <td><b>State Code: </b>37</td>
+            </tr>
+            <tr>
+                <td><b>Ph No: </b></td>
+                <td></td>
+            </tr>
+        </table>
+
+        <table class="products-table" id="productsTable">
+            <thead>
+                <tr>
+                    <th>Sl.No</th>
+                    <th>Name of Products</th>
+                    <th>HSN Code</th>
+                    <th>GST Rate</th>
+                    <th>Qty</th>
+                    <th>Rate ₹ </th>
+                    <th>Amount ₹ </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Pulser Chain</td>
+                    <td></td>
+                    <td>18%</td>
+                    <td>1</td>
+                    <td>2023</td>
+                    <td>2023.00</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Bearing</td>
+                    <td></td>
+                    <td>18%</td>
+                    <td>1</td>
+                    <td>1099</td>
+                    <td>1099.00</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Pulser Chain</td>
+                    <td></td>
+                    <td>18%</td>
+                    <td>1</td>
+                    <td>2023</td>
+                    <td>2023.00</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>Bearing</td>
+                    <td></td>
+                    <td>18%</td>
+                    <td>1</td>
+                    <td>1099</td>
+                    <td>1099.00</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>Pulser Chain</td>
+                    <td></td>
+                    <td>18%</td>
+                    <td>1</td>
+                    <td>2023</td>
+                    <td>2023.00</td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td>Bearing</td>
+                    <td></td>
+                    <td>18%</td>
+                    <td>1</td>
+                    <td>1099</td>
+                    <td>1099.00</td>
+                </tr>
+                <tr>
+                    <td>7</td>
+                    <td>Pulser Chain</td>
+                    <td></td>
+                    <td>18%</td>
+                    <td>1</td>
+                    <td>2023</td>
+                    <td>2023.00</td>
+                </tr>
+                <tr>
+                    <td>8</td>
+                    <td>Bearing</td>
+                    <td></td>
+                    <td>18%</td>
+                    <td>1</td>
+                    <td>1099</td>
+                    <td>1099.00</td>
+                </tr>
+                <tr>
+                    <td>9</td>
+                    <td>Pulser Chain</td>
+                    <td></td>
+                    <td>18%</td>
+                    <td>1</td>
+                    <td>2023</td>
+                    <td>2023.00</td>
+                </tr>
+                <tr>
+                    <td>10</td>
+                    <td>Bearing</td>
+                    <td></td>
+                    <td>18%</td>
+                    <td>1</td>
+                    <td>1099</td>
+                    <td>1099.00</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr class="total-row">
+                    <td colspan="6" style="text-align:right;">TOTAL</td>
+                    <td id="totalAmount">3122.00</td>
+                </tr>
+            </tfoot>
+        </table>
+
+        <div class="tax-details-row">
+            <div class="tax-box">(E & OE)</div>
+            <div class="tax-box">Taxable Value: <b>0.00</b></div>
+            <div class="tax-box">CGST: <b>0.00</b></div>
+            <div class="tax-box">SGST: <b>0.00</b></div>
+        </div>
+
+        <div class="footer-strip">
+            <div class="bank-disclaimer-column">
+                <div><b>Bank:</b> HDFC Bank, Kakinada</div>
+                <div><b>A/c No:</b> 50200044571811, <b>IFSC:</b> HDFC0009169</div>
+                <div style="margin-top:5px; font-size:9px;">
+                    Note: We are only mediators between Company and Purchasers for the warranty of the goods.
+                    Goods once sold will not be taken back or exchanged. All disputes subject to Kakinada.
+                </div>
+                <br>
+                <br>
+                <br>
+                <div style="margin-top:10px;">Receiver's Signature</div>
+            </div>
+            <div class="signature-column">
+                <br>
+                <br>
+                <div>For SRI RAMAKRISHNA AUTO SPARES</div>
+                <br>
+                <br>
+                <div class="authorised-text">Authorised Signatory</div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

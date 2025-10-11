@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compact Tax Invoice</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 15px;
+            background: #fff;
+            font-size: 11px;
+        }
+
+        .invoice-container {
+            width: 700px;
+            margin: auto;
+            padding: 15px;
+            border: 1px solid #000;
+        }
+
+        .header-strip {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 5px;
+            font-size: 10px;
+        }
+
+        .center-column {
+            text-align: center;
+            font-weight: bold;
+            font-size: 12px;
+        }
+
+        .invoice-header {
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .company-name {
+            font-size: 16px;
+            font-weight: bold;
+            margin: 3px 0;
+        }
+
+        .address {
+            font-size: 10px;
+            margin: 0;
+            border: none !important;
+        }
+
+        .recipient-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 10px;
+            margin-bottom: 10px;
+        }
+
+        .recipient-table td {
+            border: 1px solid #000;
+            padding: 3px 5px;
+        }
+
+        .products-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 10px;
+        }
+
+        .products-table th,
+        .products-table td {
+            border: 1px solid #000;
+            padding: 3px 5px;
+            text-align: center;
+        }
+
+        .products-table th {
+            background: #f9f9f9;
+            font-size: 10px;
+        }
+
+        .delete-btn {
+            cursor: pointer;
+            color: red;
+            font-weight: bold;
+            border: none;
+            background: none;
+        }
+
+        .total-row td {
+            font-weight: bold;
+        }
+
+        .tax-details-row {
+            display: flex;
+            font-size: 10px;
+            border: 1px solid #000;
+            border-top: none;
+            margin-top: 10px;
+        }
+
+        .tax-box {
+            flex: 1;
+            border-top: 1px solid #000;
+            border-right: 1px solid #000;
+            padding: 5px;
+            text-align: center;
+        }
+
+        .tax-box:last-child {
+            border-right: none;
+        }
+
+        .footer-strip {
+            display: flex;
+            border: 1px solid #000;
+            border-top: none;
+            margin-top: 5px;
+            font-size: 10px;
+        }
+
+        .bank-disclaimer-column {
+            flex: 2;
+            border-top: 1px solid #000;
+            border-right: 1px solid #000;
+            padding: 5px;
+        }
+
+        .signature-column {
+            flex: 1;
+            text-align: center;
+            padding: 5px;
+        }
+
+        .authorised-text {
+            border-top: 1px solid #000;
+            margin-top: 25px;
+            font-size: 10px;
+        }
+
+        .controls {
+            width: 700px;
+            margin: auto;
+            margin-bottom: 10px;
+            text-align: right;
+        }
+
+        .controls button {
+            padding: 5px 10px;
+            font-size: 10px;
+            margin-left: 5px;
+            cursor: pointer;
+        }
+
+        @media print {
+            .controls {
+                display: none;
+            }
+
+            .products-table th:last-child,
+            .products-table td:last-child {
+                display: none;
+            }
+
+            .invoice-container {
+                width: 100%;
+                border: none;
+                padding: 0;
+                margin: 0;
+            }
+
+            .products-table th {
+                background: none !important;
+                color: #000 !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="controls">
+        <button onclick="addRow()">➕ Add Row</button>
+        <button onclick="window.print()">🖨️ Print</button>
+    </div>
+
+    <div class="invoice-container">
+        <div class="header-strip">
+            <div>
+                <div>GSTIN: 37CZAPS0763H1Z7</div>
+                <div>PAN: CZAPS0763H</div>
+            </div>
+            <div class="center-column">
+                <div>TAX INVOICE</div>
+                <div>CASH / CREDIT</div>
+            </div>
+            <div>
+                <div>Cell: 93481 59999</div>
+                <div>90529 19777</div>
+            </div>
+        </div>
+
+        <div class="invoice-header">
+            <div class="company-name">SRI RAMAKRISHNA AUTO SPARES</div>
+            <p class="address">D.No. 32-1-35, Cinema Road, Revenue Ward No. 18,<br>
+                Vallabhai Street, KAKINADA - 533 001.</p>
+        </div>
+
+        <table class="recipient-table">
+            <tr>
+                <td><b>Name: </b><span contenteditable="true">PRINC - Antony M</span></td>
+                <td><b>Invoice No: </b><span contenteditable="true">2298</span></td>
+            </tr>
+            <tr>
+                <td contenteditable="true">Address: Kakinada</td>
+                <td contenteditable="true">Date: 29/09/2022</td>
+            </tr>
+            <tr>
+                <td contenteditable="true">GSTIN:</td>
+                <td contenteditable="true">State Code: 37</td>
+            </tr>
+            <tr>
+                <td contenteditable="true">Ph No:</td>
+                <td></td>
+            </tr>
+        </table>
+
+        <table class="products-table" id="productsTable">
+            <thead>
+                <tr>
+                    <th>Sl.No</th>
+                    <th>Name of Products</th>
+                    <th>HSN Code</th>
+                    <th>GST Rate</th>
+                    <th>Qty</th>
+                    <th>Rate Rs.</th>
+                    <th>Amount Rs.</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td contenteditable="true">Pulser Chain</td>
+                    <td contenteditable="true"></td>
+                    <td contenteditable="true">18%</td>
+                    <td contenteditable="true">1</td>
+                    <td contenteditable="true">2023</td>
+                    <td>2023.00</td>
+                    <td><button class="delete-btn" onclick="deleteRow(this)">✖</button></td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td contenteditable="true">Bearing</td>
+                    <td contenteditable="true"></td>
+                    <td contenteditable="true">18%</td>
+                    <td contenteditable="true">1</td>
+                    <td contenteditable="true">1099</td>
+                    <td>1099.00</td>
+                    <td><button class="delete-btn" onclick="deleteRow(this)">✖</button></td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr class="total-row">
+                    <td colspan="6" style="text-align:right;">TOTAL</td>
+                    <td id="totalAmount">3122.00</td>
+                    <td></td>
+                </tr>
+            </tfoot>
+        </table>
+
+        <div class="tax-details-row">
+            <div class="tax-box">(E & OE)</div>
+            <div class="tax-box">Taxable Value: <b><span id="taxableValue">0.00</span></div></b>
+            <div class="tax-box">CGST: <b><span id="cgstValue">0.00</span></div></b>
+            <div class="tax-box">SGST: <b><span id="sgstValue">0.00</span></div></b>
+        </div>
+
+        <div class="footer-strip">
+            <div class="bank-disclaimer-column">
+                <div><b>Bank:</b> HDFC Bank, Kakinada</div>
+                <div><b>A/c No:</b> 50200044571811, <b>IFSC:</b> HDFC0009169</div>
+                <div style="margin-top:5px; font-size:9px;">
+                    Note: We are only mediators between Company and Purchasers for the warranty of the goods.
+                    Goods once sold will not be taken back or exchanged. All disputes subject to Kakinada.
+                </div>
+                <div style="margin-top:10px;">Receiver's Signature</div>
+            </div>
+            <div class="signature-column">
+                <div>For SRI RAMAKRISHNA AUTO SPARES</div>
+                <div class="authorised-text">Authorised Signatory</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function addRow() {
+            const table = document.getElementById("productsTable").getElementsByTagName("tbody")[0];
+            const rowCount = table.rows.length;
+            const row = table.insertRow();
+
+            row.innerHTML = `
+        <td>${rowCount + 1}</td>
+        <td contenteditable="true">New Product</td>
+        <td contenteditable="true"></td>
+        <td contenteditable="true">0%</td>
+        <td contenteditable="true">1</td>
+        <td contenteditable="true">0</td>
+        <td>0.00</td>
+        <td><button class="delete-btn" onclick="deleteRow(this)">✖</button></td>
+      `;
+
+            enableAutoCalculation();
+        }
+
+        function deleteRow(btn) {
+            const row = btn.parentNode.parentNode;
+            row.parentNode.removeChild(row);
+            updateRowNumbers();
+            calculateTotal();
+        }
+
+        function updateRowNumbers() {
+            const rows = document.querySelectorAll("#productsTable tbody tr");
+            rows.forEach((row, index) => {
+                row.cells[0].innerText = index + 1;
+            });
+        }
+
+        function calculateTotal() {
+            const rows = document.querySelectorAll("#productsTable tbody tr");
+            let total = 0;
+            let taxable = 0;
+            let cgst = 0;
+            let sgst = 0;
+
+            rows.forEach(row => {
+                const qty = parseFloat(row.cells[4].innerText) || 0;
+                const rate = parseFloat(row.cells[5].innerText) || 0;
+                const gstRateText = row.cells[3].innerText.replace("%", "").trim();
+                const gstRate = parseFloat(gstRateText) || 0;
+
+                const amount = qty * rate;
+                row.cells[6].innerText = amount.toFixed(2);
+
+                const taxAmount = (amount * gstRate) / 100;
+                taxable += amount;
+                cgst += taxAmount / 2;
+                sgst += taxAmount / 2;
+                total += amount + taxAmount;
+            });
+
+            document.getElementById("totalAmount").innerText = total.toFixed(2);
+            document.getElementById("taxableValue").innerText = taxable.toFixed(2);
+            document.getElementById("cgstValue").innerText = cgst.toFixed(2);
+            document.getElementById("sgstValue").innerText = sgst.toFixed(2);
+        }
+
+        function enableAutoCalculation() {
+            const table = document.getElementById("productsTable");
+            table.addEventListener("input", function () {
+                calculateTotal();
+            });
+        }
+
+        // Init
+        enableAutoCalculation();
+        calculateTotal();
+    </script>
+</body>
+
+</html>

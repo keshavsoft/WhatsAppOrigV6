@@ -1,0 +1,284 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="utf-8")
+    meta(name="viewport", content="width=device-width,initial-scale=1")
+    title Invoice
+
+    style.
+      /* Your CSS styles go here */
+      :root {
+          --brand: #0b7a50;
+          --muted: #666;
+          --accent: #f5f5a3;
+          --paper: #fffde8;
+          --border: #ddd;
+          --mono: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      }
+      body {
+          font-family: var(--mono);
+          background: #f2f2f4;
+          margin: 24px;
+          color: #222;
+      }
+      .invoice {
+          width: 900px;
+          max-width: 100%;
+          margin: 0 auto;
+          background: white;
+          border: 1px solid var(--border);
+          box-shadow: 0 6px 20px rgba(0, 0, 0, 0.04);
+          padding: 20px;
+          box-sizing: border-box;
+      }
+      header {
+          display: flex;
+          justify-content: space-between;
+          align-items: flex-start;
+          gap: 16px;
+          padding-bottom: 10px;
+      }
+      .vendor {
+          max-width: 65%;
+      }
+      .vendor h3 {
+          margin: 0;
+          color: var(--brand);
+          letter-spacing: 0.5px;
+      }
+      .vendor .addr {
+          font-size: 13px;
+          color: var(--muted);
+          line-height: 1.35;
+      }
+      .vendor .contacts {
+          margin-top: 6px;
+          font-size: 13px;
+          color: var(--muted);
+      }
+      .meta {
+          text-align: right;
+          font-size: 13px;
+          color: var(--muted);
+      }
+      .meta .big {
+          font-size: 20px;
+          color: #111;
+          font-weight: 600;
+      }
+      .row {
+          display: flex;
+          gap: 16px;
+          margin-bottom: 10px;
+      }
+      .box {
+          flex: 1;
+          background: #fbfbfb;
+          padding: 10px;
+          border: 1px solid var(--border);
+          border-radius: 6px;
+          min-width: 0;
+      }
+      .box h3 {
+          margin: 0 0 6px 0;
+          font-size: 13px;
+          color: var(--muted);
+      }
+      .box p {
+          margin: 0;
+          font-weight: 600;
+      }
+      table.items {
+          width: 100%;
+          border-collapse: collapse;
+          margin-top: 10px;
+          font-size: 14px;
+      }
+      table.items thead th {
+          text-align: left;
+          padding: 8px 10px;
+          background: #f8f8f8;
+          border-bottom: 1px solid var(--border);
+          font-size: 13px;
+          color: var(--muted);
+      }
+      table.items tbody td {
+          padding: 8px 9px;
+          border-bottom: 1px dashed #eee;
+          vertical-align: top;
+      }
+      table.items tfoot td {
+          padding: 8px 10px;
+          font-weight: 700;
+          font-size: 14px;
+      }
+      .right {
+          text-align: right;
+      }
+      .center {
+          text-align: center;
+      }
+      .tax-summary {
+          margin-top: 12px;
+          display: flex;
+          gap: 12px;
+          justify-content: flex-end;
+          align-items: flex-end;
+      }
+      .tax-card {
+          width: 340px;
+          border: 1px solid var(--border);
+          padding: 10px;
+          background: #fff;
+          border-radius: 6px;
+          font-size: 13px;
+      }
+      .tax-card .row {
+          display: flex;
+          justify-content: space-between;
+          margin-bottom: 6px;
+      }
+      .bank {
+          font-size: 10px;
+          color: var(--muted);
+          border-top: 1px dashed var(--border);
+          padding-top: 10px;
+      }
+      .sign {
+          margin-top: 22px;
+          display: flex;
+          justify-content: flex-end;
+      }
+      .signature {
+          width: 220px;
+          text-align: center;
+          border-top: 1px solid var(--border);
+          padding-top: 6px;
+          color: var(--muted);
+          font-size: 13px;
+      }
+      @media print {
+          body {
+              margin: 0;
+          }
+          .invoice {
+              box-shadow: none;
+              border: none;
+              width: 100%;
+          }
+      }
+
+    style.
+      .flex-container {
+          display: flex;
+          gap: 20px;
+      }
+      .flex-child {
+          flex: 1;
+          padding: 20px;
+      }
+
+  body
+    .invoice(role="document")
+      header
+        .vendor
+          h3 SRI RAMAKRISHNA AUTO SPARES
+          .addr
+            | D.No. 32-1-35, Cinema Road, Revenue Ward No. 18,
+            br
+            | Vallabhai Street, KAKINADA - 533 001
+          .contacts
+            | GSTIN:
+            strong 37CZAPS0763H1Z7
+            |   |   PAN:
+            strong CZAPS0763H
+            br
+        .meta
+          div Tax Invoice (Cash/Credit)
+          h1.RefreshBSTableClass(style="display: none;") 16
+          div Number : 
+            span.big#BillNumberId=Head.pk
+          div Date: 
+            strong#InvoiceDateId=Head.InvoiceDate
+          div State Code: 
+            strong 37
+          .contacts
+            | Phone: 
+            strong 93481 59999
+            | /
+            strong 90529 19777
+
+      .row
+        .box
+          div Buyer Name : 
+            strong#BuyerNameId=Head.BuyerName
+          div Address : 
+            strong#BuyerAddressId=Head.BuyerAddress
+        .box
+          div GST : 
+            strong#BuyerGSTId=Head.BuyerGST
+          div Phone : 
+            strong#BuyerPhoneId
+
+
+      table.items(aria-label="Invoice items")
+        thead
+          tr
+            th(style="width:6%;") S.No
+                  th(style="width:62%;") Name of Product
+                  th.right(style="width:10%;") Qty
+                  th.right(style="width:10%;") Rate (₹)
+                  th.right(style="width:12%;") Amount (₹)
+        tbody#TableBodyId
+          each item, index in items
+            - const gross = item.Rate * item.Qty
+            - const discount = item.DiscPer ? (gross - item.Amount) : 0
+            tr
+              td #{index + 1}
+              td #{item.ItemName}
+              td.right #{item.Qty}
+              td.right ₹ #{item.Rate}
+              td.right ₹ #{item.Amount}
+          tr
+            td(colspan="3")
+              span Taxable Value 
+                strong#TaxableValueId=` ₹ ${TaxableValue}`
+              |  
+              span • GST 18% 
+                strong#TaxSplitId=TaxString
+            td.right(style="font-weight:700; padding-top:8px; font-size:18px;") Total
+            td.right(style="font-weight:700; padding-top:8px; font-size:20px;")=TotalAmount
+
+      .d-flex.flex-wrap.justify-content-end.align-items-center.gap-2.small.border.rounded.p-2.bg-light
+
+      .flex-container
+        div
+          .bank
+            | Note: We are only mediators between Company and Purchasers for the warranty of the goods. Goods once sold will not be taken back or exchanged. Interest @ 24% p.a. will be charged on delayed payments. Disputes subject to Kakinada jurisdiction only.
+            div(style="font-size:13px;color:var(--muted);") Receiver's Signature
+        .flex-child
+          .sign
+            .signature
+              | For SRI RAMAKRISHNA AUTO SPARES
+              br
+              span(style="font-weight:700;color:#111;") Authorised Signatory
+
+    template#TemplateForRowId
+      tr
+        td.center
+        td
+        td.center
+        td.right
+        td.right
+
+    template#TemplateForTotalRowId
+      tr
+        td(colspan="3")
+          span Taxable Value 
+            strong#TaxableValueId ₹1,964.41
+          span • GST 18% 
+            strong#TaxSplitId (CGST ₹176.80 + SGST ₹176.80)
+        td.right(style="font-weight:700;padding-top:8px;font-size:18px;") Total
+        td.right(style="font-weight:700;padding-top:8px;font-size:20px;") ₹ 2,292.00
+
+    script(type="module", src="./Js/Print/entryFile.js")

@@ -1,0 +1,8 @@
+POST http://localhost:9010/V12/BillItemsTable/Insert/AsIs
+Content-Type: application/json
+
+{
+  "title": "",
+  "start": "",
+  "className": ""
+}

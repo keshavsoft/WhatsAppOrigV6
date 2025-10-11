@@ -1,0 +1,9 @@
+{
+    "tableName": "waAck",
+    "columns": [],
+    "data": {},
+    "Vertical": [],
+    "SubRoutes": [
+        "Read"
+    ]
+}

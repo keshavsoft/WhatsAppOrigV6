@@ -1,0 +1,77 @@
+{
+    "StartUrl": "/V6",
+    "TableName": "/V6/BillsTable",
+    "showFooter": true,
+    "toolbar": "#toolbar",
+    "searchable": true,
+    "search": true,
+    "columns": [
+        {
+            "field": "BuyerName",
+            "title": "BuyerName",
+            "type": "text",
+            "isInput": true,
+            "isAutoFocus": true,
+            "WidthOptions": {
+                "inPx": 200
+            },
+            "defaultvalue": "Keshav"
+        },
+        {
+            "field": "BuyerAddress",
+            "title": "BuyerAddress",
+            "type": "text",
+            "isInput": true,
+            "isAutoFocus": true,
+            "WidthOptions": {
+                "inPx": 200
+            }
+        },
+        {
+            "field": "BuyerGST",
+            "title": "BuyerGST",
+            "type": "text",
+            "isInput": true,
+            "isAutoFocus": true,
+            "WidthOptions": {
+                "inPx": 200
+            }
+        },
+        {
+            "field": "InvoiceNo",
+            "title": "InvoiceNo",
+            "type": "number",
+            "isInput": true,
+            "WidthOptions": {
+                "inPx": 200
+            }
+        },
+        {
+            "field": "InvoiceDate",
+            "title": "InvoiceDate",
+            "isDate": true,
+            "type": "date",
+            "WidthOptions": {
+                "inPx": 200
+            },
+            "defaultvalue": "today"
+        },
+        {
+            "field": "InvoiceStateCode",
+            "title": "InvoiceStateCode",
+            "defaultvalue": "37",
+            "isInput": true,
+            "WidthOptions": {
+                "inPx": 200
+            }
+        }
+    ],
+    "Protected": {
+        "RedirectUrl": "../Authentication/sign-in.html"
+    },
+    "DataTableOptions": {
+        "Header": {
+            "autoFocus": "ItemName"
+        }
+    }
+}
