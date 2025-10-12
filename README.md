@@ -138,4 +138,8 @@ Ensure Node.js version is v22.22 or above
 
 - Api secured version started
 
+### 1.1.24
+
+- Ui SignIn V1 started
+
 ---
