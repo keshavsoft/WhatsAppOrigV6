@@ -1,4 +1,4 @@
-POST http://localhost:{PortNumber}/{Version}/{TableName}/Read/SelColumns
+POST http://localhost:9011/V12/BillsTable/Read/SelColumns
 Content-Type: application/json
 
-[ "exampleKey"]
+[ "BuyerName", "BuyerMobile"]

@@ -142,4 +142,8 @@ Ensure Node.js version is v22.22 or above
 
 - Ui SignIn V1 started
 
+### 1.1.25
+
+- Ui Secured perfect with link also
+
 ---
