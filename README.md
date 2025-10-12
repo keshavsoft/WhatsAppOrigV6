@@ -134,4 +134,8 @@ Ensure Node.js version is v22.22 or above
 
 - UI bill latest version
 
+### 1.1.23
+
+- Api secured version started
+
 ---

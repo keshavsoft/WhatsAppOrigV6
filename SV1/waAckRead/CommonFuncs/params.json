@@ -1,0 +1,1 @@
+{"TableName":"waAckRead","DataPath":"Data","Columns":["WAAckId","DeliveredDT"],"ColumnsWithSchema":[{"field":"WAAckId","title":"WAAckId","isInput":true},{"field":"DeliveredDT","title":"DeliveredDT","isInput":true}]}

@@ -1,0 +1,4 @@
+POST http://localhost:9011/SV1/BillsTable/Insert/AsIs
+Content-Type: application/json
+
+{Columns}
