@@ -146,4 +146,8 @@ Ensure Node.js version is v22.22 or above
 
 - Ui Secured perfect with link also
 
+### 1.1.26
+
+- KData path changed 
+
 ---
