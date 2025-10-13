@@ -150,4 +150,8 @@ Ensure Node.js version is v22.22 or above
 
 - KData path changed 
 
+### 1.1.27
+
+- new version SV2 perfect
+
 ---
