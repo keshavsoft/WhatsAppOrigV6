@@ -1,42 +1,37 @@
-// import UrlJson from './url.json' with { type: 'json' };
+let result;
 
 const StartFunc = ({ inHeadArray, inRowPk }) => {
-    console.log("------- : ", inRowPk);
-
     const jVarLocalNewHeadArray = jFLocalClubArrays({ inHeadArray, inItemsArray: inRowPk });
 
     var $table = $('#table');
     $table.bootstrapTable("load", jVarLocalNewHeadArray);
-
-    // window.location.href = `${UrlJson.RedirectToUrl}?pk=${inRowPk}`;
 };
 
+const jFLocalForMap = element => {
+    const LoopInsideItems = result[element.pk];
+    // console.log("LoopInsideItems : ", LoopInsideItems);
+    let jVarLocalAmountArray = [];
 
-const jFLocalClubArrays = ({ inHeadArray, inItemsArray }) => {
-    // console.log("aaaaaaaaaaaaa : ", inHeadArray, inItemsArray);
-
-
-    const result = Object.groupBy(inItemsArray, ({ FK }) => FK);
-    // console.log("aaaaaaaaaaaaa : ", result, inHeadArray, inItemsArray);
-
-    const jVarLocalNewHeadArray = inHeadArray.map(element => {
-        const LoopInsideItems = result[element.pk];
-
-        const jVarLocalAmountArray = LoopInsideItems.map(element => {
+    if (LoopInsideItems === undefined === false) {
+        jVarLocalAmountArray = LoopInsideItems.map(element => {
             return element.Amount;
         });
+    };
 
-        const sum = jVarLocalAmountArray.reduce((accumulator, currentValue) => accumulator + currentValue, 0);
+    const sum = jVarLocalAmountArray.reduce((accumulator, currentValue) => accumulator + currentValue, 0);
 
-        return {
-            ...element,
-            Amount: sum
-        }
-    });
-
-    console.log("aaaaaaaaaaaaa : ", result, jVarLocalNewHeadArray, inItemsArray);
-    return jVarLocalNewHeadArray;
+    return {
+        ...element,
+        Amount: sum
+    };
 };
 
+const jFLocalClubArrays = ({ inHeadArray, inItemsArray }) => {
+    result = Object.groupBy(inItemsArray, ({ FK }) => FK);
+
+    const jVarLocalNewHeadArray = inHeadArray.map(jFLocalForMap);
+
+    return jVarLocalNewHeadArray;
+};
 
 export { StartFunc };
