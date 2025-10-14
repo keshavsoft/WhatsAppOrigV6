@@ -1,7 +1,10 @@
+import ConfigJson from '../../../../../../Config.json' with {type: 'json'};
+
 let StartFunc = async () => {
     const jVarLocalPk = getUrlQueryParams({ inGetKey: "pk" });
+    const jVarLocalStartUrl = ConfigJson.StartUrl;
 
-    let jVarLocalFetchUrl = `/V11/waAck/Read/ValueByKey/${jVarLocalPk}`;
+    let jVarLocalFetchUrl = `/${jVarLocalStartUrl}/waAck/Read/ValueByKey/${jVarLocalPk}`;
 
     // GET http://localhost:9010/1
     let response = await fetch(jVarLocalFetchUrl);

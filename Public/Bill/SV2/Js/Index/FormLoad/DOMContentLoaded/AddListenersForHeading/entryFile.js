@@ -1,8 +1,8 @@
-import { StartFunc as StartFuncFromRefreshBSTableClass } from "./PrintButtonid/entryFile.js";
+import { StartFunc as StartFuncFromPrintButtonid } from "./PrintButtonid/entryFile.js";
 import { StartFunc as StartFuncFromSendWAid } from "./SendWAid/entryFile.js";
 
 let StartFunc = () => {
-    StartFuncFromRefreshBSTableClass();
+    StartFuncFromPrintButtonid();
     StartFuncFromSendWAid();
 };
 
