@@ -158,4 +158,8 @@ Ensure Node.js version is v22.22 or above
 
 - new version SV3 perfect used in Bill Ui latest
 
+### 1.1.29
+
+- config.json case changed in ui
+
 ---
