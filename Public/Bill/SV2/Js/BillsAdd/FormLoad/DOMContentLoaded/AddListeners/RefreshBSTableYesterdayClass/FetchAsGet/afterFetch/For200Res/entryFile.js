@@ -1,12 +1,7 @@
-import OptionsJson from '../../../options.json' with {type: 'json'};
+import { StartFunc as StartFuncFromFetchAsPost } from "./FetchAsPost/entryFile.js";
 
 let StartFunc = ({ inResponseAsJson }) => {
-    inResponseAsJson.reverse();
-    // console.log(inResponseAsJson.reverse());
-    const jVarLocalHtmlId = OptionsJson.HtmlIds.BSTable;
-
-    var $table = $(`#${jVarLocalHtmlId}`);
-    $table.bootstrapTable("load", inResponseAsJson);
+    StartFuncFromFetchAsPost({ inResponseAsJson })
 };
 
 export { StartFunc };

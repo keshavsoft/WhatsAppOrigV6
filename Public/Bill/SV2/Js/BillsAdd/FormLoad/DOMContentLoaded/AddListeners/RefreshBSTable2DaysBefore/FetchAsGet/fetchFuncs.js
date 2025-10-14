@@ -2,6 +2,7 @@ import getUrlJson from './getUrl.json' with {type: 'json'};
 import CommonTableName from '../../../../../../../Config.json' with {type: 'json'};
 
 let StartFunc = async () => {
+    // const today = new Date();
     const formattedDate = jFLocalGetYesterday();
 
     let jVarLocalCommonTable = CommonTableName.TableName;

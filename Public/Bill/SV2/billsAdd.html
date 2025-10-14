@@ -277,18 +277,25 @@
 
             <div class="tab-pane fade" id="Yesterday-tab-pane" role="tabpanel" aria-labelledby="Yesterday-tab"
                 tabindex="0">
+
+                <div id="toolbarForYesterday">
+                    <button class="btn btn-danger RefreshBSTableYesterdayClass">
+                        <i class="fa fa-trash"></i> Show Data
+                    </button>
+                </div>
+
                 <table id="tableYesterday" class="table table-bordered table-striped" data-show-footer="true"
-                    data-search="true" data-show-footer="true">
+                    data-search="true" data-show-footer="true" data-toolbar="#toolbarForYesterday">
                     <thead>
                         <tr>
                             <th data-field="KS-Serial" data-formatter="window.GlobalSerialFormatter">#</th>
                             <th data-field="BuyerName">BuyerName</th>
                             <th data-field="BuyerAddress">BuyerAddress</th>
-                            <th data-field="BuyerGST">BuyerGST</th>
+                            <th data-field="BuyerMobile">Mobile</th>
                             <!-- <th data-field="InvoiceNo">InvoiceNo</th> -->
-                            <th data-field="InvoiceDate">Date</th>
-                            <th data-field="pk">pk</th>
+                            <th data-field="Amount" data-align="right">Amount</th>
                             <th data-field="KS-Delete" data-formatter="window.GlobalDeleteFormatter">Options</th>
+                            <th data-field="pk">pk</th>
                         </tr>
                     </thead>
                 </table>
@@ -311,11 +318,11 @@
                             <th data-field="KS-Serial" data-formatter="window.GlobalSerialFormatter">#</th>
                             <th data-field="BuyerName">BuyerName</th>
                             <th data-field="BuyerAddress">BuyerAddress</th>
-                            <th data-field="BuyerGST">BuyerGST</th>
+                            <th data-field="BuyerMobile">Mobile</th>
                             <!-- <th data-field="InvoiceNo">InvoiceNo</th> -->
-                            <th data-field="InvoiceDate">Date</th>
-                            <th data-field="pk">pk</th>
+                            <th data-field="Amount" data-align="right">Amount</th>
                             <th data-field="KS-Delete" data-formatter="window.GlobalDeleteFormatter">Options</th>
+                            <th data-field="pk">pk</th>
                         </tr>
                     </thead>
                 </table>

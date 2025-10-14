@@ -154,4 +154,8 @@ Ensure Node.js version is v22.22 or above
 
 - new version SV2 perfect
 
+### 1.1.28
+
+- new version SV3 perfect used in Bill Ui latest
+
 ---

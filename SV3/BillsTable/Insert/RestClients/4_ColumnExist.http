@@ -1,0 +1,11 @@
+POST http://localhost:9011/SV3/BillsTable/Insert/ColumnExist
+Content-Type: application/json
+
+{
+  "BuyerName": "",
+  "BuyerAddress": "",
+  "BuyerGST": "",
+  "InvoiceNo": "",
+  "InvoiceDate": "",
+  "InvoiceStateCode": ""
+}

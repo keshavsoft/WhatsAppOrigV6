@@ -1,0 +1,13 @@
+POST http://localhost:9011/SV3/BillsTable/Insert/BulkAsIs
+Content-Type: application/json
+
+[
+  {
+  "BuyerName": "",
+  "BuyerAddress": "",
+  "BuyerGST": "",
+  "InvoiceNo": "",
+  "InvoiceDate": "",
+  "InvoiceStateCode": ""
+}
+]
