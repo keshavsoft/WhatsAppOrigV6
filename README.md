@@ -162,4 +162,8 @@ Ensure Node.js version is v22.22 or above
 
 - config.json case changed in ui
 
+### 1.1.30
+
+- Bill SV3 started
+
 ---
