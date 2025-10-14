@@ -2,12 +2,14 @@ import { StartFunc as StartFuncFromFetchAsGet } from "./FetchAsGet/entryFile.js"
 
 let StartFunc = ({ inResponse }) => {
    StartFuncFromFetchAsGet();
-   // console.log("aaaaaaaaaa : ", inResponse);
+   // debugger
+   console.log("aaaaaaaaaa : ", inResponse.BuyerGST);
    jFLocalToInputBillNumberId(inResponse.pk);
    jFLocalToInputInvoiceDateId(inResponse.InvoiceDate);
    jFLocalToInputBuyerNameId(inResponse.BuyerName);
    jFLocalToInputBuyerAddressId(inResponse.BuyerAddress);
    jFLocalToInputBuyerGSTId(inResponse.BuyerGST);
+   jFLocalToInputBuyerPhoneId(inResponse.BuyerMobile);
 
    Object.entries(inResponse).forEach(([key, value]) => {
       let inputElement = document.getElementById(`HtmlId-${key}`);
@@ -16,6 +18,16 @@ let StartFunc = ({ inResponse }) => {
       }
    });
 };
+
+let jFLocalToInputBuyerPhoneId = (inValue) => {
+   let jVarLocalHtmlId = 'BuyerPhoneId';
+   let jVarLocalBuyerPhoneId = document.getElementById(jVarLocalHtmlId);
+
+   if (jVarLocalBuyerPhoneId === null === false) {
+      jVarLocalBuyerPhoneId.innerHTML = inValue;
+   };
+};
+
 let jFLocalToInputBuyerAddressId = (inValue) => {
    let jVarLocalHtmlId = 'BuyerAddressId';
    let jVarLocalBuyerAddressId = document.getElementById(jVarLocalHtmlId);

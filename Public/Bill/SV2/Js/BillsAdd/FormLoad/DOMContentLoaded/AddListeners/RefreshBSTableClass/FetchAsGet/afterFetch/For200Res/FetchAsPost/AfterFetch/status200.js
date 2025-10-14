@@ -1,9 +1,14 @@
+import OptionsJson from '../../../../../options.json' with {type: 'json'};
+const CommonTableName = `${OptionsJson.HtmlIds.BSTable}`;
+
 let result;
 
 const StartFunc = ({ inHeadArray, inRowPk }) => {
     const jVarLocalNewHeadArray = jFLocalClubArrays({ inHeadArray, inItemsArray: inRowPk });
+    jVarLocalNewHeadArray.reverse();
 
-    var $table = $('#table');
+    var $table = $(`#${CommonTableName}`);
+    
     $table.bootstrapTable("load", jVarLocalNewHeadArray);
 };
 
