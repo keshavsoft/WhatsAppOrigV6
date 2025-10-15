@@ -166,4 +166,8 @@ Ensure Node.js version is v22.22 or above
 
 - Bill SV3 started
 
+### 1.1.31
+
+- Bill SV3 create to login fixed
+
 ---
