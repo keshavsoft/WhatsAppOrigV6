@@ -170,4 +170,8 @@ Ensure Node.js version is v22.22 or above
 
 - Bill SV3 create to login fixed
 
+### 1.1.32
+
+- Bill SV3 index redirect perfect
+
 ---

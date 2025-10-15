@@ -1,20 +1,17 @@
-// import { StartFunc as StartFuncCheckFunc } from "./CheckFunc.js";
-
 import { StartFunc as StartFuncCheckFunc } from "./CheckFuncs/entryFile.js";
-
-import { StartFunc as StartFuncFetchFromFuncs } from "./FetchFromFuncs/Entry.js";
+import { StartFunc as StartFuncFetchFromFuncs } from "./FetchFromFuncs/EntryFile.js";
 
 const StartFunc = (event) => {
     const jVarLocalCurrentTarget = event.currentTarget;
 
     const jVarLocalFromCheck = StartFuncCheckFunc();
-    // console.log("aaaaaaaaaaaa : ", jVarLocalFromCheck);
+
     if (jVarLocalFromCheck === false) {
         return false;
     };
-  
+
     jVarLocalCurrentTarget.disabled = true;
-    // document.querySelector("span");
+
     jFLocalShowProcess({ inCurrentTarget: jVarLocalCurrentTarget });
 
     StartFuncFetchFromFuncs({ inCurrentTarget: jVarLocalCurrentTarget });
