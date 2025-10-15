@@ -1,0 +1,6 @@
+{
+    "HtmlIds": {
+        "BSTable": "tableYesterday",
+        "BSTableClass": "RefreshBSTableYesterdayClass"
+    }
+}
