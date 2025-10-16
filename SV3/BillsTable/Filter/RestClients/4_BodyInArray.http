@@ -1,4 +1,9 @@
-POST http://localhost:{PortNumber}/{Version}/{TableName}/Filter/BodyInArray
+POST http://localhost:9011/SV3/BillsTable/Filter/BodyInArray
 Content-Type: application/json
 
-{"inKey":"element.","inValue":""}
+{"inKey":"InvoiceDate","inValue":[
+    "2025-10-12",
+    "2025-10-13",
+    "2025-10-14",
+    "2025-10-15"
+]}

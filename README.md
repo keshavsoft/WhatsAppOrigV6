@@ -190,4 +190,8 @@ Ensure Node.js version is v22.22 or above
 
 - backup added in billsadd.html SV5
 
+### 1.6.1
+
+- Public Bill SV6 started this week perfect
+
 ---

@@ -1,0 +1,21 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Launch Program with Env",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "env": {
+                "DataPath": "KData",
+                "DATABASE_URL": "mongodb://localhost:27017/mydb"
+            },
+            "program": "${workspaceFolder}\\app.js"
+        }
+    ]
+}
