@@ -182,4 +182,8 @@ Ensure Node.js version is v22.22 or above
 
 - backup perfect
 
+### 1.1.35
+
+- V2 login perfect with create data retained
+
 ---

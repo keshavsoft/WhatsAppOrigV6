@@ -1,8 +1,10 @@
 import { StartFunc as StartFuncFromToDataList } from "./ToDataList/entryFile.js";
+import { StartFunc as StartFuncFromToDomFromParams } from "./toDomFromParams.js";
 
 let StartFunc = () => {
     jFLocalDateInsert();
     StartFuncFromToDataList();
+    StartFuncFromToDomFromParams();
 };
 
 const jFLocalDateInsert = () => {
