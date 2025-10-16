@@ -16,6 +16,7 @@ import { StartFunc as StartFuncFromMiddleware } from "./Token/MiddleWares/entryF
 
 import { StartFunc as StartFuncFromWebSocketServer } from "./Projects/WebSocketServer/V2/entryFile.js";
 import { router as routerFromWA } from "./Projects/WaV5/entryFile.js";
+import { router as routerForUtility } from "./Utility/routes.js";
 
 import { router as routerFromSecret } from "./Secret/routes.js";
 import { router as routerFromUsers } from "./Users/routes.js";
@@ -29,6 +30,7 @@ app.use(express.static('Public'));
 app.use(cookieParser());
 
 app.use("/WA", routerFromWA);
+app.use('/utility', routerForUtility);
 
 app.use("/Secret", routerFromSecret);
 app.use("/Users", routerFromUsers);
