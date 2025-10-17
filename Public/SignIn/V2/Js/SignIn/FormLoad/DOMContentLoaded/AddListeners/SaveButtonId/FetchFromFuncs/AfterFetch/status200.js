@@ -10,21 +10,23 @@ const jFLocalAddUrlParams = () => {
     const jVarLocalSuccessUrl = getUrlQueryParams({ inGetKey: "SuccessUrl" });
     const jVarLocalBuyerName = getUrlQueryParams({ inGetKey: "BuyerName" });
     const jVarLocalBuyerMobile = getUrlQueryParams({ inGetKey: "BuyerMobile" });
-    const jVarLocalNewUrl = `${jVarLocalSuccessUrl}?BuyerName=${jVarLocalBuyerName}&BuyerMobile=${jVarLocalBuyerMobile}`;
-    // console.log("aaaaaaa : ", jVarLocalSuccessUrl);
+    // const jVarLocalNewUrl = `${jVarLocalSuccessUrl}?BuyerName=${jVarLocalBuyerName}&BuyerMobile=${jVarLocalBuyerMobile}`;
+    let jVarLocalNewUrl = jVarLocalSuccessUrl;
+
+    if (jVarLocalBuyerName === null === false) {
+        jVarLocalNewUrl = `${jVarLocalNewUrl}?BuyerName=${jVarLocalBuyerName}`;
+    };
+
+    if (jVarLocalBuyerMobile === null === false) {
+        jVarLocalNewUrl = `${jVarLocalNewUrl}&BuyerMobile=${jVarLocalBuyerMobile}`;
+    };
+    console.log("aaaaaaaaaa : ", jVarLocalBuyerName, jVarLocalNewUrl);
 
     if (jVarLocalSuccessUrl === null) {
         window.location.href = jVarLocalRedirectUrl;
     } else {
         window.location.href = jVarLocalNewUrl;
     };
-
-    // const url = new URL(window.location.href);
-
-    // let NewURl = new URL(jVarLocalRedirectUrl, url);
-
-    // NewURl.searchParams.append('SuccessUrl', inSuccessUrl);
-    // window.location.href = jVarLocalNewUrl;
 };
 
 let getUrlQueryParams = ({ inGetKey }) => {
