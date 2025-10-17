@@ -67,7 +67,7 @@
         }
     ],
     "Protected": {
-        "RedirectUrl": "../../SignIn/V2/"
+        "RedirectUrl": "../../SignIn/V3/"
     },
     "DataTableOptions": {
         "Header": {
