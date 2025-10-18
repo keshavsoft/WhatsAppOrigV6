@@ -1,26 +1,16 @@
 let StartFunc = () => {
-    const jVarLocalBuyerMobile = getUrlQueryParams({ inGetKey: "BuyerMobile" });
-    const jVarLocalBuyerName = getUrlQueryParams({ inGetKey: "BuyerName" });
-
-    jFLocalToInputBuyerMobile(jVarLocalBuyerMobile);
-    jFLocalToInputBuyerName(jVarLocalBuyerName);
+    jFLocalToInput({ inId: "HtmlId-BuyerMobile", inValue: getUrlQueryParams({ inGetKey: "BuyerMobile" }) });
+    jFLocalToInput({ inId: "HtmlId-BuyerName", inValue: getUrlQueryParams({ inGetKey: "BuyerName" }) });
+    jFLocalToInput({ inId: "HtmlId-BuyerAddress", inValue: getUrlQueryParams({ inGetKey: "BuyerAddress" }) });
+    jFLocalToInput({ inId: "HtmlId-BuyerGST", inValue: getUrlQueryParams({ inGetKey: "BuyerGST" }) });
 };
 
-let jFLocalToInputBuyerMobile = (inValue) => {
-    let jVarLocalHtmlId = 'HtmlId-BuyerMobile';
+let jFLocalToInput = ({ inId, inValue }) => {
+    let jVarLocalHtmlId = inId;
     let jVarLocalBuyerMobile = document.getElementById(jVarLocalHtmlId);
 
     if (jVarLocalBuyerMobile === null === false) {
         jVarLocalBuyerMobile.value = inValue;
-    };
-};
-
-let jFLocalToInputBuyerName = (inValue) => {
-    let jVarLocalHtmlId = 'HtmlId-BuyerName';
-    let jVarLocalBuyerName = document.getElementById(jVarLocalHtmlId);
-
-    if (jVarLocalBuyerName === null === false) {
-        jVarLocalBuyerName.value = inValue;
     };
 };
 
