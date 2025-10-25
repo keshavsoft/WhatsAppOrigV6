@@ -20,8 +20,7 @@ let postFilterDataFromBodyFunc = (req, res) => {
   const jVarLocalToken = StartFuncFromCreateToken({ inObject: "Keshav" });
 
   res.set("Content-Type", "text/plain");
-  res
-    .cookie("KSToken", jVarLocalToken, { maxAge: 900000, httpOnly: false })
+  res.cookie("KSToken", jVarLocalToken, { maxAge: 9000000, httpOnly: false })
     .end(jVarLocalToken);
 };
 

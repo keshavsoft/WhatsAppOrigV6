@@ -202,4 +202,8 @@ Ensure Node.js version is v22.22 or above
 
 - Public Bill SV9 last week perfect
 
+### 1.9.2
+
+- Public Bill SV10 today time lapse perfect
+
 ---
