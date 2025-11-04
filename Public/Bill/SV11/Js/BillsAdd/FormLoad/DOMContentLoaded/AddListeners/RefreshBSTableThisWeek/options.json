@@ -1,0 +1,9 @@
+{
+    "HtmlIds": {
+        "BSTable": "tableThisWeek",
+        "BSTableClass": "RefreshBSTableThisWeek"
+    },
+    "Filters": {
+        "DaysBefore": 2
+    }
+}

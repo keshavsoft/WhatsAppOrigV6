@@ -206,4 +206,8 @@ Ensure Node.js version is v22.22 or above
 
 - Public Bill SV10 today time lapse perfect
 
+### 1.11.1
+
+- Public Bill SV11 report started
+
 ---
