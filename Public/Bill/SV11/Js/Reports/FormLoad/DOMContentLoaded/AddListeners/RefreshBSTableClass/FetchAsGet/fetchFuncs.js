@@ -5,32 +5,27 @@ const CommonDaysBefore = OptionsJson.Filters.DaysBefore;
 
 let StartFunc = async () => {
     // const today = new Date();
-    const formattedDate = jFLocalGetYesterday();
+    const jVarFromDate = jFFromInput({ inPutId: "HtmlId-FromDate" });
+    const jVarToDate = jFFromInput({ inPutId: "HtmlId-ToDate" });
 
     let jVarLocalCommonTable = CommonTableName.TableName;
-    let jVarLocalGetEndPoint = getUrlJson.GetEndPoint.replace("${Date}", formattedDate);
+    let jVarLocalGetUrl = getUrlJson.GetEndPoint.replace("${fromDate}", jVarFromDate);
+    let jVarLocalGetEndPoint = jVarLocalGetUrl.replace("${toDate}", jVarToDate);
     let jVarLocalFetchUrl = `${jVarLocalCommonTable}/${jVarLocalGetEndPoint}`
 
     let response = await fetch(jVarLocalFetchUrl);
 
     return await response;
 };
+const jFFromInput = ({ inPutId }) => {
+    const inputElement = document.getElementById(inPutId);
 
-const jFLocalGetYesterday = () => {
-    const yesterday = new Date();
+    if (!inputElement) {
+        console.warn(`Input element with id "${inPutId}" not found.`);
+        return false;
+    }
 
-    // Subtract one day. The setDate() method automatically handles date roll-over.
-    yesterday.setDate(yesterday.getDate() - CommonDaysBefore);
-
-    // Extract the components and ensure they are padded with a leading zero.
-    const year = yesterday.getFullYear();
-    const month = String(yesterday.getMonth() + 1).padStart(2, '0'); // Months are 0-indexed
-    const day = String(yesterday.getDate()).padStart(2, '0');
-
-    // Combine into the YYYY-MM-DD format.
-    const formattedDate = `${year}-${month}-${day}`;
-
-    return formattedDate;
+    return inputElement.value;
 };
 
 export { StartFunc };
