@@ -210,4 +210,8 @@ Ensure Node.js version is v22.22 or above
 
 - Public Bill SV11 report started
 
+### 1.12.1
+
+- Public Bill SV12 report perfect with Api SV4, public folders deleted
+
 ---

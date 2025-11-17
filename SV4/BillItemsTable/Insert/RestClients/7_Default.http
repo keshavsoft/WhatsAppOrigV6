@@ -1,0 +1,7 @@
+POST http://localhost:9011/SV4/BillItemsTable/Insert/Default
+Content-Type: application/json
+
+[
+  "sample1",
+  "sample2"
+]

@@ -1,0 +1,2 @@
+POST http://localhost:9011/SV4/BillsTable/Insert/OnlyDefault
+Content-Type: application/json

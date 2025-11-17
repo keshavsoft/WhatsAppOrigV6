@@ -1,4 +1,0 @@
-{
-    "GetEndPoint1": "/WA/GeneratePdf/${Pk}",
-    "GetEndPoint": "/WA/SendMessage/${Pk}"
-}

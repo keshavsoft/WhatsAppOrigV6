@@ -1,0 +1,1 @@
+GET http://localhost:9011/SV4/BillsTable/Read/KeyCount/{Column name}

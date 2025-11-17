@@ -1,0 +1,1 @@
+DELETE http://localhost:9011/SV4/BillItemsTable/Delete/WithPk/{pk}
