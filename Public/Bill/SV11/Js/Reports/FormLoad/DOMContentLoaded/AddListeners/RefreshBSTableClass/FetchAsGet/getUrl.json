@@ -1,5 +1,5 @@
 {
-    "GetEndPoint": "Filter/ByKeyAndValue/InvoiceDate/${Date}",
+    "GetEndPoint": "Filter/BetweenDates/InvoiceDate/${fromDate}/${toDate}",
     "GetEndPoint1": "Read/AsIs"
 }
 
